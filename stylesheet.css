@@ -3,6 +3,7 @@ div.scroll-container {
     overflow: auto;
     white-space: nowrap;
     padding: 10px;
+    color: white;
   }
   
 div.scroll-container img {

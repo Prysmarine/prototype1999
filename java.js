@@ -1,74 +1,54 @@
 var div = "";
-var test = "";
-const owned = [];
+const owned = ["Sonetto"];
 
-function testing(x) {
-    div = document.getElementById("testP");
-    div.innerHTML = "Successful Click of " + x;
-}
-
-
+//This function dims and brightens the unit icons on click
 function dim(x) {
     div = document.getElementById(x);
+        //toggles the icon class darken on and off, the class can be found in styelsheet.css
     div.classList.toggle("darken");
     ownedAdjust(x);
 }
 
+//This function adds to, or removes units from the owned[] array
 function ownedAdjust(x) {
-    test = document.getElementById("testP");
-    test.innerHTML = "Entered Adjust";
+    //local variable to store the result of indexOf()
     var z;
+    //if the length of the array is 0, add the unit - array is empty so no need to verify if it exists
     if (owned.length == 0)
     {
-        test.innerHTML += "<br>owned length is /" + owned.length;
         owned.push(x);
-        test.innerHTML += "<br>owned length is now /" + owned.length;
     }
     else 
     {
-        test.innerHTML += "<br>entered the else statement";
-        z = owned.findIndex(checkOwned, x)
-        test.innerHTML += "<br>" + z;
+        //checks the array for the index of unit x passed in from the image ID set in html
+        z = owned.indexOf(x);
         switch(z)
         {
             case -1:
-                test.innerHTML += "<br> case -1";
+                //in the case of -1 return value, the unit does not exist so add the unit
                 owned.push(x);
                 break;
             default:
-                test.innerHTML += "<br> case default";
+                //in every other case the unit exists, so remove the unit
                 owned.splice(z, 1);
                 break;
         }
         
     }
+    
     displayOwned();
 }
 
-function checkOwned(x)
-{
-    document.getElementById("testP").innerHTML += "<br>getting the index of unit";
-    return owned.x == this.x;
-    
-}
-
-
+//outputs the array contents
 function displayOwned() {
-    i = 0;
-    test = document.getElementById("testP");
-    test.innerHTML += "<br>Entered displayOwned<br>owned.length is " + owned.length;
-    document.getElementById("unitList").innerHTML = "This will be where the units are listed.";
+    var i = 0;
+    var dis = document.getElementById("owned");
+
+    owned.sort();
+    dis.innerHTML = "";
     while (i < owned.length)
     {
-        test.innerHTML += "<br>Entered display while loop. value is " + i + " " + owned.length;
-        if (owned.length == 0)
-        {
-            test.innerHTML += "<br> entered the IF statement";
-            document.getElementById("unitList").innerHTML = "no units";
-        }
-        test.innerHTML += "<br>passed the if statement";
-        document.getElementById("unitList").innerHTML += owned[i];
+        dis.innerHTML += owned[i] + "<br>";
         i++;
     }
-    test.innerHTML += "<br>Finished displayOwned";
 }

@@ -5,20 +5,11 @@
         <title>Reverse 1999 Prototype</title>
         <script type="text/javascript" src="java.js"></script>
     </head>
-    <body>
+    <body onload=displayOwned()>
         
-        <h1>Hello World</h1>
-        <p>
-            This will be my test for a unit tracker.
-            Let's start with a scroller.
-        </p>
-        <p id="testP">
-            This is the testing paragraph
-        </p>
-        <p id="unitList">
-            This will be where the units are listed.
-        </p>
-        <button id="button" onclick="testing(this.id)">Test Me</button>
+        <h1>Unit Tracker</h1>
+        
+
         <div id="units" class="scroll-container">
             <img src="img/6_icon.png" alt, id="6" onclick="dim(this.id)">
             <img src="img/37_icon.png" alt, id="37" onclick="dim(this.id)">
@@ -36,5 +27,15 @@
             <img src="img/Centurion_icon.png" alt, id="Centurion" onclick="dim(this.id)">
             <img src="img/Charlie_icon.png" alt, id="Charlie" onclick="dim(this.id)">
         </div>
+        <br>
+        <div id="owned" class="scroll-container">
+            
+        </div>
+        <br>
+        <hr>
+        <h3>"Debug Log"</h3>
+        <p id="bug">
+
+        </p>
     </body>
 </html>
