@@ -43,12 +43,25 @@ function ownedAdjust(x) {
 function displayOwned() {
     var i = 0;
     var dis = document.getElementById("owned");
-
+    
+    var bug = document.getElementById("bug");
     owned.sort();
     dis.innerHTML = "";
+    bug.innerHTML = "";
+    
     while (i < owned.length)
     {
-        dis.innerHTML += owned[i] + "<br>";
+        var img = document.createElement("img");
+        var j = stringReplace(owned[i]);
+        img.setAttribute("src", "img/" + j + "_Icon.png");
+        bug.innerHTML += "<br>img/" + j + "_Icon.png";
+        img.setAttribute("id", owned[i]);
+        dis.appendChild(img);
         i++;
     }
+}
+
+function stringReplace(x) {
+    var z = x.replace(/ /g, '_');
+    return z;
 }
