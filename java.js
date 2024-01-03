@@ -1,5 +1,5 @@
 var div = "";
-const owned = ["Sonetto", "Apple"];
+const owned = ["Sonetto", "APPLe"];
 
 //This function dims and brightens the unit icons on click
 function dim(x) {
