@@ -1,5 +1,5 @@
 var div = "";
-const owned = ["Sonetto"];
+const owned = ["Sonetto", "Apple"];
 
 //This function dims and brightens the unit icons on click
 function dim(x) {
@@ -53,7 +53,7 @@ function displayOwned() {
         //creating the new img element for the div array
         var img = document.createElement("img");
         var j = stringReplace(owned[i]);
-        img.setAttribute("src", "img/" + j + "_Icon.png");
+        img.setAttribute("src", "img/" + j + "_Icon.webp");
         //the line blow outputs the above line for debugging purposes
         //bug.innerHTML += "<br>img/" + j + "_Icon.png";
         img.setAttribute("id", owned[i]);
