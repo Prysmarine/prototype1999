@@ -4,14 +4,22 @@ div.scroll-container {
     white-space: nowrap;
     padding: 10px;
     color: white;
+    display: flex;
   }
   
 div.scroll-container img {
 padding: 10px;
 }
 
+div.caption {
+    display: flex;
+    justify-content: center;
+}
+
+
 img {
     border-radius: 50%;
+    display: flex;
 }
 
 img.darken {

@@ -1,5 +1,35 @@
 var div = "";
-const owned = ["Sonetto", "APPLe"];
+const owned = [];
+const avail = [];
+
+
+
+function populate()
+{
+    document.getElementById("bug").innerHTML += "populate() called";
+    var ancestor = document.getElementById("units");
+    var descendants = ancestor.getElementsByID('*');
+    document.getElementById("bug").innerHTML += "<br>finished descendants";
+
+    var i;
+    for (i=0; i < descendents.length; ++i)
+    {
+        document.getElementById("bug").innerHTML += "<br>for loop";
+        avail.push(i);
+    }
+    bug.innerHTML  += "for loop done";
+
+    populateDisplay();
+}
+
+function populateDisplay()
+{
+    bug.innerHTML += "popDis() called";
+    foreach (x in avail)
+    {
+        bug.innerHTML += "<br>" + x;
+    }
+}
 
 //This function dims and brightens the unit icons on click
 function dim(x) {
