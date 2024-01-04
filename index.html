@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html style="background-color: lightgray";>
-    <head>
+    <head onload="load()">
         <link rel="stylesheet" type="text/css" href="stylesheet.css" />
         <title>Reverse 1999 Prototype</title>
         <script type="text/javascript" src="java.js"></script>
     </head>
-    <body onload=displayOwned()>
+    <body onload="displayOwned()">
         
-        <h1>Unit Tracker</h1>
-        <button onclick="populate()">Push Me</button>
+        <H1>Unit Tracker</H1>
+        <hr>
+        <H2>Available Units</H2>
+        <button onclick="save()">Save Units</button>
+        <button onclick="load()">Load Units</button>
 
         <div id="units" class="scroll-container">
             <div>
@@ -285,7 +288,15 @@
             </div>           
         </div>
         <br>
-        <div id="owned" class="scroll-container">
+
+        
+
+        <div class="owned-header">
+            <H2>Owned Units</H2>
+            <button class = "clear" onclick="clearArray()">Clear</button>
+        </div>
+
+        <div id="owned" class="static-container">
             
         </div>
         <br>

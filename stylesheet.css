@@ -6,12 +6,27 @@ div.scroll-container {
     color: white;
     display: flex;
   }
+
+  div.static-container {
+    background-color: #858383;
+    overflow: none;
+    white-space: nowrap;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+div.owned-header {
+    display: flex;
+    align-items: center;
+}
   
-div.scroll-container img {
+.scroll-container img {
 padding: 10px;
 }
 
-div.caption {
+.caption {
     display: flex;
     justify-content: center;
 }
@@ -29,3 +44,9 @@ img.darken {
 .brighten {
     filter: brightness(100%);
 }
+
+button.clear {
+    margin-left: 15px;
+}
+
+

@@ -2,13 +2,30 @@ var div = "";
 const owned = [];
 const avail = [];
 
+function save() {
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        let string = JSON.stringify(owned);
+        localStorage.setItem("owned", string);    
+    }
+    else
+    {
+        document.getElementById("bug").innerHTML += "Storage unavailable";
+    }
+}
 
+function load() {
+    // Retrieve
+    let retString = localStorage.getItem("owned");
+    let owned = JSON.parse(retString);
+    displayOwned();
+}
 
 function populate()
 {
     document.getElementById("bug").innerHTML += "populate() called";
     var ancestor = document.getElementById("units");
-    var descendants = ancestor.getElementsByID('*');
+    var descendents = ancestor.getElementById("*");
     document.getElementById("bug").innerHTML += "<br>finished descendants";
 
     var i;
@@ -97,4 +114,20 @@ function displayOwned() {
 function stringReplace(x) {
     var z = x.replace(/ /g, '_');
     return z;
+}
+
+//quick clears the owned units array
+function clearArray() {
+    var i = 0;
+
+    while(i < owned.length)
+    {
+        var x = owned[i];
+        div = document.getElementById(x);      
+        div.classList.toggle("darken");
+        i++
+    }
+
+    owned.length = 0;
+    displayOwned();
 }
