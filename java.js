@@ -1,54 +1,85 @@
 var div = "";
-const owned = [];
+var owned = [];
 const avail = [];
 
-function save() {
+
+//saves the owned array to local storage
+function saveUnits() {
     if (typeof(Storage) !== "undefined") {
         // Store
-        let string = JSON.stringify(owned);
-        localStorage.setItem("owned", string);    
+        console.log("Storage is available");
+        var store = JSON.stringify(owned);
+        localStorage.setItem("owned", store);   
+        console.log("Units saved"); 
     }
     else
     {
-        document.getElementById("bug").innerHTML += "Storage unavailable";
+        console.log("Storage Unavailable");
     }
 }
 
-function load() {
+
+
+//loads the owned array from local storage
+function loadUnits() {
     // Retrieve
+    console.log("Attempting to Load Units");
     let retString = localStorage.getItem("owned");
-    let owned = JSON.parse(retString);
+    owned = JSON.parse(retString);
+    console.log('Retrieved: ', owned);
     displayOwned();
+    console.log("Units displayed, adjusting icons");
+
+//------------------------------------------
+//This wrapped code is duplicated from dim() 
+//so as not to delete the array
+    var i = 0;
+    while (i < owned.length)
+    {
+        div = document.getElementById(owned[i]);
+        div.classList.toggle("darken");
+        i++;
+    }
+//This wrapped code is duplicated from dim() 
+//so as not to delete the array
+//------------------------------------------
+
+    
 }
 
+
+/*
+//unimplemeneted - don't remember what the attempted
+//purpose of this was. leaving for now.
 function populate()
 {
-    document.getElementById("bug").innerHTML += "populate() called";
     var ancestor = document.getElementById("units");
     var descendents = ancestor.getElementById("*");
-    document.getElementById("bug").innerHTML += "<br>finished descendants";
-
+   
     var i;
     for (i=0; i < descendents.length; ++i)
     {
-        document.getElementById("bug").innerHTML += "<br>for loop";
         avail.push(i);
     }
-    bug.innerHTML  += "for loop done";
-
     populateDisplay();
 }
 
+
+
+//unimplemeneted - don't remember what the attempted
+//purpose of this was. leaving for now.
 function populateDisplay()
 {
-    bug.innerHTML += "popDis() called";
-    foreach (x in avail)
+   foreach (x in avail)
     {
-        bug.innerHTML += "<br>" + x;
+        console.log("You shouldn't be here");
     }
 }
+*/
 
-//This function dims and brightens the unit icons on click
+
+
+//dims and brightens the unit icons on click
 function dim(x) {
     div = document.getElementById(x);
         //toggles the icon class darken on and off, the class can be found in styelsheet.css
@@ -56,7 +87,10 @@ function dim(x) {
     ownedAdjust(x);
 }
 
-//This function adds to, or removes units from the owned[] array
+
+
+
+//adds to, or removes units from the owned[] array
 function ownedAdjust(x) {
     //local variable to store the result of indexOf()
     var z;
@@ -82,18 +116,20 @@ function ownedAdjust(x) {
         }
         
     }
-    
+    saveUnits();
     displayOwned();
 }
 
+
+
+
 //outputs the array contents
 function displayOwned() {
+    console.log(owned);
     var i = 0;
     var dis = document.getElementById("owned");
-    //var bug = document.getElementById("bug");
     owned.sort();
     dis.innerHTML = "";
-    bug.innerHTML = "";
     
     while (i < owned.length)
     {
@@ -101,8 +137,7 @@ function displayOwned() {
         var img = document.createElement("img");
         var j = stringReplace(owned[i]);
         img.setAttribute("src", "img/" + j + "_Icon.webp");
-        //the line blow outputs the above line for debugging purposes
-        //bug.innerHTML += "<br>img/" + j + "_Icon.png";
+
         img.setAttribute("id", owned[i]);
         //append the newly created img to the div
         dis.appendChild(img);
@@ -110,11 +145,18 @@ function displayOwned() {
     }
 }
 
+
+
+
 //replace the spaces in the unit ID names with underscores
 function stringReplace(x) {
     var z = x.replace(/ /g, '_');
     return z;
 }
+
+
+
+
 
 //quick clears the owned units array
 function clearArray() {

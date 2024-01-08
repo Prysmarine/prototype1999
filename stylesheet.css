@@ -1,3 +1,7 @@
+html {
+    background-color: lightgray;
+}
+
 div.scroll-container {
     background-color: #858383;
     overflow: auto;
@@ -43,6 +47,10 @@ img.darken {
 
 .brighten {
     filter: brightness(100%);
+}
+
+button {
+    margin-left: 5px;
 }
 
 button.clear {

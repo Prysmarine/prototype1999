@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html style="background-color: lightgray";>
-    <head onload="load()">
+<html>
+    <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css" />
         <title>Reverse 1999 Prototype</title>
         <script type="text/javascript" src="java.js"></script>
@@ -10,10 +10,8 @@
         <H1>Unit Tracker</H1>
         <hr>
         <H2>Available Units</H2>
-        <button onclick="save()">Save Units</button>
-        <button onclick="load()">Load Units</button>
 
-        <div id="units" class="scroll-container">
+        <div id="units" class="scroll-container" onload="loadUnits()">
             <div>
                 <img src="img/6_Icon.webp" alt, id="6" onclick="dim(this.id)">
                 <div class="caption">6</div>
@@ -293,17 +291,16 @@
 
         <div class="owned-header">
             <H2>Owned Units</H2>
-            <button class = "clear" onclick="clearArray()">Clear</button>
+            <button class="clear" onclick="clearArray()">Clear</button>
+            
+            <button onclick="saveUnits()">Save Units</button>
+
+            <button onclick="loadUnits()">Load Units</button>
         </div>
 
         <div id="owned" class="static-container">
             
         </div>
-        <br>
-        <hr>
-        <h3>"Debug Log"</h3>
-        <p id="bug">
 
-        </p>
     </body>
 </html>
