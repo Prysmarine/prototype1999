@@ -2,7 +2,7 @@ html {
     background-color: lightgray;
 }
 
-div.scroll-container {
+.scroll-container {
     background-color: #858383;
     overflow: auto;
     white-space: nowrap;
@@ -11,7 +11,7 @@ div.scroll-container {
     display: flex;
   }
 
-  div.static-container {
+  .static-container {
     background-color: #858383;
     overflow: none;
     white-space: nowrap;
@@ -21,18 +21,27 @@ div.scroll-container {
     flex-wrap: wrap;
   }
 
-div.owned-header {
+.owned-header {
     display: flex;
     align-items: center;
 }
+
   
 .scroll-container img {
 padding: 10px;
+margin-left: 10px;
+background-color: blue;
 }
 
 .caption {
     display: flex;
     justify-content: center;
+}
+
+.buttons_ {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
 }
 
 
@@ -55,6 +64,11 @@ button {
 
 button.clear {
     margin-left: 15px;
+}
+
+input {
+    display: flex;
+    width: 35px;
 }
 
 

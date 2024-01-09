@@ -171,5 +171,6 @@ function clearArray() {
     }
 
     owned.length = 0;
+    saveUnits();
     displayOwned();
 }
