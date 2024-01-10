@@ -4,10 +4,36 @@ div.scroll-container {
     white-space: nowrap;
     padding: 10px;
     color: white;
+<<<<<<< Updated upstream
   }
   
 div.scroll-container img {
 padding: 10px;
+=======
+    display: flex;
+}
+
+.static-container {
+    background-color: #858383;
+    overflow: none;
+    white-space: nowrap;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.owned-header {
+    display: flex;
+    align-items: center;
+}
+
+  
+.scroll-container img {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: blue;
+>>>>>>> Stashed changes
 }
 
 img {
@@ -20,4 +46,104 @@ img.darken {
 
 .brighten {
     filter: brightness(100%);
+<<<<<<< Updated upstream
+=======
+}
+
+button {
+    margin-left: 5px;
+}
+
+button.clear {
+    margin-left: 15px;
+}
+
+input {
+    display: flex;
+    width: 35px;
+}
+
+
+/*---------------*/
+/*----Nav Bar----*/
+/*---------------*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: orange;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: black;
+}
+
+li a:hover {
+    background-color: red;
+}
+
+.active {
+    background-color: red;
+}
+
+/*---------------*/
+/*---Stat Page---*/
+/*---------------*/
+
+.statContainer {
+    overflow: none;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.disStat {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 0px;
+    row-gap: 0px;
+    border: solid 1px black;
+}
+
+
+
+.disImg {
+    display: inline-grid;
+    grid-column: 1;
+    grid-row: 1/ Span 3;
+    justify-content: center;
+    height: 300px;
+    width: 125px;
+    padding-left: 10px;
+}
+
+.disImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.info {
+    display: inline-grid;
+    grid-column: 2;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.info input {
+    height: 50%;
+    padding-left: 5px;
+>>>>>>> Stashed changes
 }
