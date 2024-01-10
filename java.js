@@ -48,35 +48,6 @@ function loadUnits() {
 }
 
 
-/*
-//unimplemeneted - don't remember what the attempted
-//purpose of this was. leaving for now.
-function populate()
-{
-    var ancestor = document.getElementById("units");
-    var descendents = ancestor.getElementById("*");
-   
-    var i;
-    for (i=0; i < descendents.length; ++i)
-    {
-        avail.push(i);
-    }
-    populateDisplay();
-}
-
-
-
-//unimplemeneted - don't remember what the attempted
-//purpose of this was. leaving for now.
-function populateDisplay()
-{
-   foreach (x in avail)
-    {
-        console.log("You shouldn't be here");
-    }
-}
-*/
-
 
 
 //dims and brightens the unit icons on click
