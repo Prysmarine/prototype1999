@@ -1,15 +1,36 @@
-div.scroll-container {
+html {
+    background-color: lightgray;
+}
+
+
+.scroll-container {
     background-color: #858383;
     overflow: auto;
     white-space: nowrap;
     padding: 10px;
     color: white;
-<<<<<<< Updated upstream
+    display: flex;
   }
+
+  .static-container {
+    background-color: #858383;
+    overflow: none;
+    white-space: nowrap;
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+.owned-header {
+    display: flex;
+    align-items: center;
+}
+
   
-div.scroll-container img {
-padding: 10px;
-=======
+.scroll-container img {
+    padding: 10px;
     display: flex;
 }
 
@@ -33,11 +54,25 @@ padding: 10px;
     padding: 10px;
     margin-left: 10px;
     background-color: blue;
->>>>>>> Stashed changes
+    margin-left: 10px;
+    background-color: blue;
 }
+
+.caption {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons_ {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
 
 img {
     border-radius: 50%;
+    display: flex;
 }
 
 img.darken {
@@ -46,8 +81,6 @@ img.darken {
 
 .brighten {
     filter: brightness(100%);
-<<<<<<< Updated upstream
-=======
 }
 
 button {
@@ -145,5 +178,4 @@ li a:hover {
 .info input {
     height: 50%;
     padding-left: 5px;
->>>>>>> Stashed changes
 }

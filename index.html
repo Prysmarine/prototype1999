@@ -1,45 +1,337 @@
 <!DOCTYPE html>
-<html style="background-color: lightgray";>
+<html>
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-<<<<<<< Updated upstream
-        <title>Reverse 1999 Prototype</title>
-=======
+
         <title>R:1999 Unit Tracker</title>
->>>>>>> Stashed changes
+
         <script type="text/javascript" src="java.js"></script>
     </head>
-    <body onload=displayOwned()>
+    <body onload="displayOwned()">
         
-        <h1>Unit Tracker</h1>
-        
+        <H1>Unit Tracker</H1>
+        <ul>
+            <li><a class="active" href="https://prysmarine.github.io/prototype1999/">Unit Select</a></li>
+            <li><a href="./stats.html">Stat Manager</a></li>
+        </ul>
+        <hr>
+        <H2>Available Units</H2>
 
-        <div id="units" class="scroll-container">
-            <img src="img/6_icon.png" alt, id="6" onclick="dim(this.id)">
-            <img src="img/37_icon.png" alt, id="37" onclick="dim(this.id)">
-            <img src="img/A_Knight_icon.png" alt, id="A Knight" onclick="dim(this.id)">
-            <img src="img/AliEn_T_icon.png" alt, id="AliEn T" onclick="dim(this.id)">
-            <img src="img/An-an_Lee_icon.png" alt, id="An-an Lee" onclick="dim(this.id)">
-            <img src="img/APPLe_icon.png" alt, id="APPLe" onclick="dim(this.id)">
-            <img src="img/Baby_Blue_icon.png" alt, id="Baby Blue" onclick="dim(this.id)">
-            <img src="img/Balloon_Party_icon.png" alt, id="Balloon Party" onclick="dim(this.id)">
-            <img src="img/Bette_icon.png" alt, id="Bette" onclick="dim(this.id)">
-            <img src="img/Bkornblume_icon.png" alt, id="Bkornblume" onclick="dim(this.id)">
-            <img src="img/Black_Dwarf_icon.png" alt, id="Black Dwarf" onclick="dim(this.id)">
-            <img src="img/Blonney_icon.png" alt, id="Blonney" onclick="dim(this.id)">
-            <img src="img/Bunny_Bunny_icon.png" alt, id="Bunny Bunny" onclick="dim(this.id)">
-            <img src="img/Centurion_icon.png" alt, id="Centurion" onclick="dim(this.id)">
-            <img src="img/Charlie_icon.png" alt, id="Charlie" onclick="dim(this.id)">
+        <div id="units" class="scroll-container" onload="loadUnits()">
+            <div>
+                <img src="img/6_Icon.webp" alt, id="6" onclick="dim(this.id)">
+                <div class="caption">6</div>
+                <div class="buttons_">
+                    <input type="number" min="1" max="60" placeholder="60">
+                    <input type="number" min="0" max="3" placeholder="3">
+                    <input type="number" min="1" max="15" placeholder="15">
+                </div>
+            </div>
+            <div>
+                <img src="img/37_Icon.webp" alt, id="37" onclick="dim(this.id)">
+                <div class="caption">37</div>
+                <div class="buttons_">
+                    <input type="number" min="1" max="60" placeholder="60">
+                    <input type="number" min="0" max="3" placeholder="3">
+                    <input type="number" min="1" max="15" placeholder="15">
+                </div>
+            </div>
+            <div>
+                <img src="img/A_Knight_Icon.webp" alt, id="A Knight" onclick="dim(this.id)">
+                <div class="caption">A Knight</div>
+                <div class="buttons_">
+                    <input type="number" min="1" max="60" placeholder="60">
+                    <input type="number" min="0" max="3" placeholder="3">
+                    <input type="number" min="1" max="15" placeholder="15">
+                </div>
+            </div>
+            <div>
+                <img src="img/AliEn_T_Icon.webp" alt, id="AliEn T" onclick="dim(this.id)">
+                <div class="caption">AliEn T</div>
+                <div class="buttons_">
+                    <input type="number" min="1" max="60" placeholder="60">
+                    <input type="number" min="0" max="3" placeholder="3">
+                    <input type="number" min="1" max="15" placeholder="15">
+                </div>
+            </div>
+            <div>
+                <img src="img/An-an_Lee_Icon.webp" alt, id="An-an Lee" onclick="dim(this.id)">
+                <div class="caption">An-an Lee</div>
+                <div class="buttons_">
+                    <input type="number" min="1" max="60" placeholder="60">
+                    <input type="number" min="0" max="3" placeholder="3">
+                    <input type="number" min="1" max="15" placeholder="15">
+                </div>
+            </div>
+            <div>
+                <img src="img/APPLe_Icon.webp" alt, id="APPLe" onclick="dim(this.id)">
+                <div class="caption">APPLe</div>
+            </div>
+            <div>
+                <img src="img/Baby_Blue_Icon.webp" alt, id="Baby Blue" onclick="dim(this.id)">
+                <div class="caption">Baby Blue</div>
+            </div>
+            <div>
+                <img src="img/Balloon_Party_Icon.webp" alt, id="Balloon Party" onclick="dim(this.id)">
+                <div class="caption">Balloon Party</div>
+            </div>
+            <div>
+                <img src="img/Bette_Icon.webp" alt, id="Bette" onclick="dim(this.id)">
+                <div class="caption">Bette</div>
+            </div>
+            <div>
+                <img src="img/Bkornblume_Icon.webp" alt, id="Bkornblume" onclick="dim(this.id)">
+                <div class="caption">Bkornblume</div>
+            </div>
+            <div>
+                <img src="img/Black_Dwarf_Icon.webp" alt, id="Black Dwarf" onclick="dim(this.id)">
+                <div class="caption">Black Dwarf</div>
+            </div>
+            <div>
+                <img src="img/Blonney_Icon.webp" alt, id="Blonney" onclick="dim(this.id)">
+                <div class="caption">Blonney</div>
+            </div>
+            <div>
+                <img src="img/Bunny_Bunny_Icon.webp" alt, id="Bunny Bunny" onclick="dim(this.id)">
+                <div class="caption">Bunny Bunny</div>
+            </div>
+            <div>
+                <img src="img/Centurion_Icon.webp" alt, id="Centurion" onclick="dim(this.id)">
+                <div class="caption">Centurion</div>
+            </div>
+            <div>
+                <img src="img/Charlie_Icon.webp" alt, id="Charlie" onclick="dim(this.id)">
+                <div class="caption">Charlie</div>
+            </div>
+            <div>
+                <img src="img/Click_Icon.webp" alt, id="Click" onclick="dim(this.id)">
+                <div class="caption">Click</div>
+            </div>
+            <div>
+                <img src="img/Cristallo_Icon.webp" alt, id="Cristallo" onclick="dim(this.id)">
+                <div class="caption">Cristallo</div>
+            </div>
+            <div>
+                <img src="img/Darley_Clatter_Icon.webp" alt, id="Darley Clatter" onclick="dim(this.id)">
+                <div class="caption">Darley Clatter</div>
+            </div>
+            <div>
+                <img src="img/Desert_Flannel_Icon.webp" alt, id="Desert Flannel" onclick="dim(this.id)">
+                <div class="caption">Desert Flannel</div>
+            </div>
+            <div>
+                <img src="img/Diggers_Icon.webp" alt, id="Diggers" onclick="dim(this.id)">
+                <div class="caption">Diggers</div>
+            </div>
+            <div>
+                <img src="img/Dikke_Icon.webp" alt, id="Dikke" onclick="dim(this.id)">
+                <div class="caption">Dikke</div>
+            </div>
+            <div>
+                <img src="img/Door_Icon.webp" alt, id="Door" onclick="dim(this.id)">
+                <div class="caption">Door</div>
+            </div>
+            <div>
+                <img src="img/Druvis_III_Icon.webp" alt, id="Druvis III" onclick="dim(this.id)">
+                <div class="caption">Druvis III</div>
+            </div>
+            <div>
+                <img src="img/Eagle_Icon.webp" alt, id="Eagle" onclick="dim(this.id)">
+                <div class="caption">Eagle</div>
+            </div>
+            <div>
+                <img src="img/Erick_Icon.webp" alt, id="Erick" onclick="dim(this.id)">
+                <div class="caption">Erick</div>
+            </div>
+            <div>
+                <img src="img/Eternity_Icon.webp" alt, id="Eternity" onclick="dim(this.id)">
+                <div class="caption">Eternity</div>
+            </div>
+            <div>
+                <img src="img/Ezra_Theodore_Icon.webp" alt, id="Ezra Theodore" onclick="dim(this.id)">
+                <div class="caption">Ezra Theodore</div>
+            </div>
+            <div>
+                <img src="img/Horropedia_Icon.webp" alt, id="Horropedia" onclick="dim(this.id)">
+                <div class="caption">Horropedia</div>
+            </div>
+            <div>
+                <img src="img/Jessica_Icon.webp" alt, id="Jessica" onclick="dim(this.id)">
+                <div class="caption">Jessica</div>
+            </div>
+            <div>
+                <img src="img/John_Titor_Icon.webp" alt, id="John Titor" onclick="dim(this.id)">
+                <div class="caption">John Titor</div>
+            </div>
+            <div>
+                <img src="img/Kanjira_Icon.webp" alt, id="Kanjira" onclick="dim(this.id)">
+                <div class="caption">Kanjira</div>
+            </div>
+            <div>
+                <img src="img/La_Source_Icon.webp" alt, id="La Source" onclick="dim(this.id)">
+                <div class="caption">La Source</div>
+            </div>
+            <div>
+                <img src="img/Leilani_Icon.webp" alt, id="Leilani" onclick="dim(this.id)">
+                <div class="caption">Leilani</div>
+            </div>
+            <div>
+                <img src="img/Lilya_Icon.webp" alt, id="Lilya" onclick="dim(this.id)">
+                <div class="caption">Lilya</div>
+            </div>
+            <div>
+                <img src="img/Matilda_Icon.webp" alt, id="Matilda" onclick="dim(this.id)">
+                <div class="caption">Matilda</div>
+            </div>
+            <div>
+                <img src="img/Medicine_Pocket_Icon.webp" alt, id="Medicine Pocket" onclick="dim(this.id)">
+                <div class="caption">Medicine Pocket</div>
+            </div>
+            <div>
+                <img src="img/Melania_Icon.webp" alt, id="Melania" onclick="dim(this.id)">
+                <div class="caption">Melania</div>
+            </div>
+            <div>
+                <img src="img/Mesmer_Jr._Icon.webp" alt, id="Mesmer Jr." onclick="dim(this.id)">
+                <div class="caption">Mesmer Jr.</div>
+            </div>
+            <div>
+                <img src="img/Mondlicht_Icon.webp" alt, id="Mondlicht" onclick="dim(this.id)">
+                <div class="caption">Mondlicht</div>
+            </div>
+            <div>
+                <img src="img/Ms._Moissan_Icon.webp" alt, id="Ms. Moissan" onclick="dim(this.id)">
+                <div class="caption">Ms. Moissan</div>
+            </div>
+            <div>
+                <img src="img/Ms._NewBabel_Icon.webp" alt, id="Ms. NewBabel" onclick="dim(this.id)">
+                <div class="caption">Ms. NewBabel</div>            
+            </div>
+            <div>
+                <img src="img/Ms._Radio_Icon.webp" alt, id="Ms. Radio" onclick="dim(this.id)">
+                <div class="caption">Ms. Radio</div>
+            </div>
+            <div>
+                <img src="img/Necrologist_Icon.webp" alt, id="Necrologist" onclick="dim(this.id)">
+                <div class="caption">Necrologist</div>
+            </div>
+            <div>
+                <img src="img/Nick_Bottom_Icon.webp" alt, id="Nick Bottom" onclick="dim(this.id)">
+                <div class="caption">Nick Bottom</div>
+            </div>
+            <div>
+                <img src="img/ONiON_Icon.webp" alt, id="ONiON" onclick="dim(this.id)">
+                <div class="caption">ONiON</div>
+            </div>
+            <div>
+                <img src="img/Oliver_Fog_Icon.webp" alt, id="Oliver Fog" onclick="dim(this.id)">
+                <div class="caption">Oliver Fog</div>
+            </div>
+            <div>
+                <img src="img/Pavia_Icon.webp" alt, id="Pavia" onclick="dim(this.id)">
+                <div class="caption">Pavia</div>
+            </div>
+            <div>
+                <img src="img/Pickles_Icon.webp" alt, id="Pickles" onclick="dim(this.id)">
+                <div class="caption">Pickles</div>
+            </div>
+            <div>
+                <img src="img/Poltergeist_Icon.webp" alt, id="Poltergeist" onclick="dim(this.id)">
+                <div class="caption">Poltergeist</div>
+            </div>
+            <div>
+                <img src="img/Rabies_Icon.webp" alt, id="Rabies" onclick="dim(this.id)">
+                <div class="caption">Rabies</div>
+            </div>
+            <div>
+                <img src="img/Regulus_Icon.webp" alt, id="Regulus" onclick="dim(this.id)">
+                <div class="caption">Regulus</div>
+            </div>
+            <div>
+                <img src="img/Satsuki_Icon.webp" alt, id="Satsuki" onclick="dim(this.id)">
+                <div class="caption">Satsuki</div>
+            </div>
+            <div>
+                <img src="img/Schneider_Icon.webp" alt, id="Schneider" onclick="dim(this.id)">
+                <div class="caption">Schneider</div>
+            </div>
+            <div>
+                <img src="img/Shamane_Icon.webp" alt, id="Shamane" onclick="dim(this.id)">
+                <div class="caption">Shamane</div>
+            </div>
+            <div>
+                <img src="img/Sonetto_Icon.webp" alt, id="Sonetto" onclick="dim(this.id)">
+                <div class="caption">Sonetto</div>
+            </div>
+            <div>
+                <img src="img/Sotheby_Icon.webp" alt, id="Sotheby" onclick="dim(this.id)">
+                <div class="caption">Sotheby</div>
+            </div>
+            <div>
+                <img src="img/Spathodea_Icon.webp" alt, id="Spathodea" onclick="dim(this.id)">
+                <div class="caption">Spathodea</div>
+            </div>
+            <div>
+                <img src="img/Sputnik_Icon.webp" alt, id="Sputnik" onclick="dim(this.id)">
+                <div class="caption">Sputnik</div>
+            </div>
+            <div>
+                <img src="img/Sweetheart_Icon.webp" alt, id="Sweetheart" onclick="dim(this.id)">
+                <div class="caption">Sweetheart</div>
+            </div>
+            <div>
+                <img src="img/TTT_Icon.webp" alt, id="TTT" onclick="dim(this.id)">
+                <div class="caption">TTT</div>
+            </div>
+            <div>
+                <img src="img/Tennant_Icon.webp" alt, id="Tennant" onclick="dim(this.id)">
+                <div class="caption">Tennant</div>
+            </div>
+            <div>
+                <img src="img/The_Fool_Icon.webp" alt, id="The Fool" onclick="dim(this.id)">
+                <div class="caption">The Fool</div>
+            </div>
+            <div>
+                <img src="img/Tooth_Fairy_Icon.webp" alt, id="Tooth Fairy" onclick="dim(this.id)">
+                <div class="caption">Tooth Fairy</div>
+            </div>
+            <div>
+                <img src="img/Twins_Sleep_Icon.webp" alt, id="Twins Sleep" onclick="dim(this.id)">
+                <div class="caption">Twins Sleep</div>
+            </div>
+            <div>
+                <img src="img/Ulu_Icon.webp" alt, id="Ulu" onclick="dim(this.id)">
+                <div class="caption">Ulu</div>
+            </div>
+            <div>
+                <img src="img/Voyager_Icon.webp" alt, id="Voyager" onclick="dim(this.id)">
+                <div class="caption">Voyager</div>
+            </div>
+            <div>
+                <img src="img/X_Icon.webp" alt, id="X" onclick="dim(this.id)">
+                <div class="caption">X</div>
+            </div>
+            <div>
+                <img src="img/Зима_Icon.webp" alt, id="Зима" onclick="dim(this.id)">
+                <div class="caption">Зима</div>
+            </div>           
         </div>
         <br>
-        <div id="owned" class="scroll-container">
+
+        
+
+        <div class="owned-header">
+            <H2>Owned Units</H2>
+            <button class="clear" onclick="clearArray()">Clear</button>
+            
+            <button onclick="saveUnits()">Save Units</button>
+
+            <button onclick="loadUnits()">Load Units</button>
+        </div>
+
+        <div id="owned" class="static-container">
             
         </div>
-        <br>
-        <hr>
-        <h3>"Debug Log"</h3>
-        <p id="bug">
 
-        </p>
     </body>
 </html>
